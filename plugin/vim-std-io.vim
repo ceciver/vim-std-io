@@ -13,7 +13,7 @@ endif
 
 let g:std_io_plugin_dir = expand('<sfile>:p:h')
 
-let g:std_io_run_commands = {'cpp': "'g++ -Wall --std=c++14 -o ' . expand('%:p:r') . '.o ' . expand('%:p') . ' && ' . expand('%:p:r') . '.o'", 'java': "'javac ' . expand('%:p') . ' && java ' . expand('%:r')", 'python': "'python ' . expand('%:p')" }
+let g:std_io_run_commands = {'cpp': "'g++ -DLOCAL -Wall -Wextra -O2 -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG --std=c++17 -o ' . expand('%:p:r') . '.o ' . expand('%:p') . ' && ' . expand('%:p:r') . '.o'"}", 'java': "'javac ' . expand('%:p') . ' && java ' . expand('%:r')", 'python': "'python3 ' . expand('%:p')" }
 
 if exists('g:std_io_user_command')
   let arr = items(g:std_io_user_command)
